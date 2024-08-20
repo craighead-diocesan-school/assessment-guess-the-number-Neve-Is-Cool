@@ -40,5 +40,6 @@ function guessTheNumber() {
     }
 
     alert (usersName + ' = ' + numOfAttempts)
+    
 
 }
