@@ -56,6 +56,6 @@ function showScoreboard () {
         count = count + 1
     }
     //Adds a space and makes the... explain it better dude.
-    alert (scoreBoard)
+    alert ('This is the scoreboard, the person with the lowest score is winning! ' +scoreBoard)
     //Alerts the scoreboard...
 }
