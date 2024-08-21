@@ -16,7 +16,10 @@ function guessTheNumber() {
     
     let numOfAttempts = 0
     let usersAttempt = 0
+    const maxInRange = 20
+    const minInRange = 1
     //These blah blah blah.
+
     alert ('Hi ' + usersName + '! lets play a game of guess the number! Try to guess a number between 1 and 20 inclusive in the fewest guesses possible.')
     //Explains the game etc....
     
@@ -29,12 +32,12 @@ function guessTheNumber() {
         if (usersAttempt == theNumber) {
             alert ('Congrats, you got it!!')
             numOfAttempts = numOfAttempts + 1
-            boardOfScores.push(usersName + '=' + numOfAttempts)
+            boardOfScores.push('\n' + usersName + '=' + numOfAttempts)
             // Explanation
-        } else if (usersAttempt > 20 || usersAttempt < 1) {
-            alert ('The number you guessed in not within a range of 1-20')
+        } else if (usersAttempt > maxInRange || usersAttempt < minInRange) {
+            alert ('Sorry, the number you guessed in not within a range of 1-20, please try again')
             //Explanation
-        } else if (usersAttempt != theNumber) {
+        } else if (usersAttempt != theNumber && usersAttempt >= minInRange && usersAttempt <= maxInRange ) {
             alert ('Nope, try again.')
             numOfAttempts = numOfAttempts + 1 
             //Explanation
