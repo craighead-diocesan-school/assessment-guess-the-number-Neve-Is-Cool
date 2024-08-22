@@ -3,7 +3,7 @@ let boardOfScores = [
 //Empty array for the scoreboard -- players and their scores will be pushed into this array.
 
 function guessTheNumber() {
-    //Overall summary of this function............
+    //Simulates a game of guess the number from 1-20 for a user, generates number, asks their input, gives adequate output to the user and updates their score.
 
     alert ("Let's play guess the number")
     let usersName = prompt ('What is your name?')
@@ -51,7 +51,7 @@ function guessTheNumber() {
 }
 
 function showScoreboard () {
-    //Overall summary of this function.................
+    ////Adds a space and comma to the end of each line, and changes the boardOfScores array into a variable named scoreBoard which it outputs.
 
     let arrayLength = boardOfScores.length
     let count = 0
@@ -60,7 +60,7 @@ function showScoreboard () {
         scoreBoard = scoreBoard + boardOfScores[count] + ', '
         count = count + 1
     }
-    //Adds a space and comma to the end of each line, and changes the boardOfScores array into a variable named scoreBoard.
+
     alert ('This is the scoreboard, the person with the lowest score is winning! ' +scoreBoard)
     //Alerts the final scoreboard to the user.
 }
