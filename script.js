@@ -9,16 +9,14 @@ function guessTheNumber() {
     let usersName = prompt ('What is your name?')
     //Introduction to the game and asks the user for their name and places it under the variable name: usersName.
 
-    const randomGeneratorRange = 20
-    let theNumber = Math.floor (Math.random() *randomGeneratorRange)
-    theNumber = theNumber + 1
+    const max = 20
+    const min = 1
+    let theNumber = Math.floor (Math.random() * (max - min + 1)) + min;
     //Generates a random number between 1 and 20 inclusive.
     
     let numOfAttempts = 0
     let usersAttempt = 0
     //Sets both to 0 so they can be updated through the course of the game.
-    const maxInRange = 20
-    const minInRange = 1
     //Sets the maximum and minimum ranges for comparisons to determine the output following their attempts.
 
     alert ('Hi ' + usersName + '! lets play a game of guess the number! Try to guess a number between 1 and 20 inclusive in the fewest guesses possible.')
@@ -33,15 +31,15 @@ function guessTheNumber() {
         
         if (usersAttempt == theNumber) {
             alert ('Congrats, you got it!!')
-            numOfAttempts = numOfAttempts + 1
+            numOfAttempts++
             boardOfScores.push('\n' + usersName + '=' + numOfAttempts)
             //When the usersAttempt is equal to the random generated number, one attempt is added to the total number of attempts and the usersName and final number of attempts is pushed to a new line within the boardOfScores array.
-        } else if (usersAttempt > maxInRange || usersAttempt < minInRange) {
+        } else if (usersAttempt > max || usersAttempt < min) {
             alert ('Sorry, the number you guessed in not within a range of 1-20, please try again')
             //If the users attempt is not within the range of 1-20 this message will be displayed and no new attempts will be added to the total number of attempts.
-        } else if (usersAttempt != theNumber && usersAttempt >= minInRange && usersAttempt <= maxInRange ) {
+        } else if (usersAttempt != theNumber && usersAttempt >= min && usersAttempt <= max ) {
             alert ('Nope, try again.')
-            numOfAttempts = numOfAttempts + 1 
+            numOfAttempts++
             //When the usersattempt is not equal to the number and within the range of 1-20, the user receives the message 'Nope, try again' and one is added to the total number of attempts.
         } else {
             alert ('Invalid attempt, please try again.')
@@ -49,6 +47,7 @@ function guessTheNumber() {
         }
     } 
 }
+
 
 function showScoreboard () {
     ////Adds a space and comma to the end of each line, and changes the boardOfScores array into a variable named scoreBoard which it outputs.
@@ -58,7 +57,7 @@ function showScoreboard () {
     let scoreBoard = ''
     while (count<arrayLength) {
         scoreBoard = scoreBoard + boardOfScores[count] + ', '
-        count = count + 1
+        count++
     }
 
     alert ('This is the scoreboard, the person with the lowest score is winning! ' +scoreBoard)
