@@ -48,7 +48,6 @@ function guessTheNumber() {
     } 
 }
 
-
 function showScoreboard () {
     ////Adds a space and comma to the end of each line, and changes the boardOfScores array into a variable named scoreBoard which it outputs.
 
@@ -61,5 +60,5 @@ function showScoreboard () {
     }
 
     alert ('This is the scoreboard, the person with the lowest score is winning! ' +scoreBoard)
-    //Alerts the final scoreboard to the user.
+    //Alerts the final scoreboard to the user with a small explanation
 }
